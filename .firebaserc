@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "news-hooks"
+    "default": "news-hooks",
+    "staging": "news-links-hooks"
   }
 }

@@ -38,6 +38,19 @@ function LinkList(props) {
         .startAt(cursor.created)
         .limit(LINKS_PER_PAGE)
         .onSnapshot(handleSnapshots);
+    } else {
+      const offset = page * LINKS_PER_PAGE - LINKS_PER_PAGE;
+      axios
+        .get(
+          `https://us-central1-news-links-hooks.cloudfunctions.net/linksPagination?offset=${offset}`
+        )
+        .then(response => {
+          const links = response.data;
+          const lastLink = links[links.length - 1];
+          setLinks(links);
+          setCursor(lastLink);
+        });
+      return () => {};
     }
   }
   function handleSnapshots(snapshot) {
