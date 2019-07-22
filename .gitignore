@@ -2,6 +2,7 @@
 
 # Ignore Firebase Config
 /src/firebase/config.js
+/functions/node_modules
 
 # dependencies
 /node_modules
