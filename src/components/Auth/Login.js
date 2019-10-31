@@ -27,12 +27,10 @@ function Login(props) {
   async function authenticateUser() {
     const { name, email, password } = values;
     try {
-      // const response =
       login
         ? await firebase.login(email, password)
         : await firebase.register(name, email, password);
       props.history.push("/");
-      //console.log({ response });
     } catch (err) {
       console.log("Authentication Error", err);
       setFirebaseError(err.message);
@@ -79,9 +77,10 @@ function Login(props) {
         <div className="flex mv3">
           <button
             type="submit"
-            className="button pointer mr"
+            className="button pointer mr2"
             disabled={isSubmitting}
-            style={{ backgroun: isSubmitting ? "grey" : "orange" }}
+            style={{ background: isSubmitting ? "grey" : "orange" }}
+            onSubmit={handleSubmit}
           >
             Submit
           </button>

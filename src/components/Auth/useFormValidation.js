@@ -16,10 +16,10 @@ function useFormValidation(initialState, validate, authenticate) {
         setSubmitting(false);
       }
     }
-  }, [errors]); //run this function only if errors changes in some way
+  }, [errors]);
 
   function handleChange(event) {
-    event.persist(); //otherwise name will be null
+    event.persist();
     setValues(previousValues => ({
       ...previousValues,
       [event.target.name]: event.target.value

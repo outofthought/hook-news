@@ -27,6 +27,10 @@ function Header() {
         <NavLink to="/search" className="header-link">
           search
         </NavLink>
+        <div className="divider">|</div>
+        <NavLink to="/test" className="header-link">
+          test
+        </NavLink>
         {user && (
           <>
             <div className="divider">|</div>

@@ -8,6 +8,7 @@ import LinkList from "./Link/LinkList";
 import LinkDetail from "./Link/LinkDetail";
 import Header from "./Header";
 import "../styles/index.css";
+import Test from "./Test";
 
 import useAuth from "./Auth/useAuth";
 
@@ -31,6 +32,7 @@ function App() {
               <Route path="/top" component={LinkList} />
               <Route path="/new/:page" component={LinkList} />
               <Route path="/link/:linkId" component={LinkDetail} />
+              <Route path="/test" component={Test} />
             </Switch>
           </div>
         </div>
